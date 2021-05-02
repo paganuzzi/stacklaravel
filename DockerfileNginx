@@ -2,3 +2,6 @@ FROM nginx:stable-alpine
 WORKDIR /app
 COPY ./app/public /app/public
 COPY default.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+RUN chgrp -R nginx /tmp && chown -R nginx /tmp
+USER nginx:nginx

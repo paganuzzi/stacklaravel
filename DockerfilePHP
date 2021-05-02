@@ -2,3 +2,4 @@ FROM php:fpm-alpine3.13
 WORKDIR /app
 COPY ./app .
 RUN chgrp -R www-data /app/storage && chown -R www-data /app/storage
+USER www-data:www-data

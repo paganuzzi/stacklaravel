@@ -3,6 +3,7 @@
 
 
 - [x] Nginx y PHPFpm
+- [x] Nginx y PHPFpm non root
 - [ ] Multistage build, que se corra composer --nodev y node para generar la app
 - [ ] Redis
 - [ ] Minio object storage
@@ -10,4 +11,5 @@
 - [ ] Mail Server
 - [ ] Task y jobs
 - [ ] Websockets para Notificaciones
+- [ ] Helm Chart
 - [ ] Pipeline ci/cd
