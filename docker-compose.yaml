@@ -1,0 +1,16 @@
+version: '3'
+services: 
+    nginx:
+        # build: 
+        #     context: .
+        #     dockerfile: DockerfileNginx
+        image: paganuzzi:nginx
+        ports: 
+            - 8000:80
+        depends_on: 
+            - phpfpm
+    phpfpm:
+        # build: 
+        #     context: .
+        #     dockerfile: DockerfilePHP
+        image: paganuzzi:phpfpm-v1
