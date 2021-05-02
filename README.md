@@ -10,3 +10,4 @@
 - [ ] Mail Server
 - [ ] Task y jobs
 - [ ] Websockets para Notificaciones
+- [ ] Pipeline ci/cd
