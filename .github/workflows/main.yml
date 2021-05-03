@@ -15,14 +15,15 @@ jobs:
       - name: composer
         run: |
           cd app
-          composer install
-      - name: Build and push
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          context: .
-          file: ./DockerfilePHP
-          tags: paganuzzi/laravel-nginx:v1
-          secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          echo ${{ secrets.GITHUB_TOKEN }}
+      # - name: Build and push
+          #composer install
+      #   id: docker_build
+      #   uses: docker/build-push-action@v2
+      #   with:
+      #     push: true
+      #     context: .
+      #     file: ./DockerfilePHP
+      #     tags: paganuzzi/laravel-nginx:v1
+      #     secrets: |
+      #       GIT_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }}
