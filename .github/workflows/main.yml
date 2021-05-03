@@ -43,16 +43,7 @@ jobs:
           context: .
           push: true
           file: DockerfilePHP
-          tags: |
-            ghcr.io/paganuzzi/stacklaravel-php:latest
-      -
-        name: Build and push nginx
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          file: DockerfileNginx
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           # tags: |
-          #   ghcr.io/paganuzzi/stacklaravel-nginx:latest
+          #   ghcr.io/paganuzzi/stacklaravel-php:latest
