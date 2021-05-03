@@ -22,7 +22,7 @@ jobs:
         id: meta
         uses: crazy-max/ghaction-docker-meta@v2
         with:
-          images: name/app
+          images: ghcr.io/paganuzzi/stacklaravel-php
           tags: |
             type=ref,event=branch
             type=ref,event=pr
