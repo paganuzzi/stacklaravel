@@ -31,6 +31,6 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: v1
+          tags: ghcr.io/paganuzzi/app:latest
           #labels: ${{ steps.meta.outputs.labels }}
           file: ./DockerfilePHP
