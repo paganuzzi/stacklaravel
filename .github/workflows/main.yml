@@ -24,7 +24,7 @@ jobs:
         with:
           push: true
           context: .
-          file: DockerfilePHP
+          file: ./DockerfilePHP
           tags: paganuzzi/laravel-nginx:"${GITHUB_REF#refs/*/}"
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
