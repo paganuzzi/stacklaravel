@@ -30,5 +30,6 @@ jobs:
         with:
           context: .
           push: true
+          file: DockerfilePHP
           tags: |
-            ghcr.io/user/app:latest
+            ghcr.io/paganuzzi/stacklaravel:latest
