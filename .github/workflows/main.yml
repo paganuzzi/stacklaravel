@@ -17,4 +17,4 @@ jobs:
           cd app
           composer install
           cd ..
-          docker build -t paganuzzi/laravel-nginx:1 -f DockerfileNginx .
+          docker build -t paganuzzi/laravel-nginx:"${GITHUB_SHA}" -f DockerfilePHP .
