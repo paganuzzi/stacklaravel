@@ -1,9 +1,11 @@
 name: Composer
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  #   branches: [ master ]
+  # pull_request:
+  #   branches: [ master ]
+    tags:
+      - v1.*
 
   workflow_dispatch:
 
