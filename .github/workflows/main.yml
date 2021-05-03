@@ -22,7 +22,7 @@ jobs:
       - name: Build and push
         id: docker_build
         with:
-          #push: true
+          push: true
           context: .
           file: ./DockerfilePHP
           tags: paganuzzi/laravel-nginx:"${GITHUB_REF#refs/*/}"
