@@ -23,6 +23,6 @@ jobs:
           push: true
           context: .
           file: ./DockerfilePHP
-          tags: paganuzzi/laravel-nginx:"${GITHUB_REF#refs/*/}"
+          tags: paganuzzi/laravel-nginx:1
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
