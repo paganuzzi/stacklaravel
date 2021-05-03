@@ -24,5 +24,3 @@ jobs:
           context: .
           file: ./DockerfilePHP
           tags: paganuzzi/laravel-nginx:1
-          secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
