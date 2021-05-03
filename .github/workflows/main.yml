@@ -17,7 +17,8 @@ jobs:
           cd app
           composer install
       - name: Build and push
-        uses: docker/build-push-action:${{GITHUB_REF#refs/*/}}
+        uses: docker/build-push-action:v1
+        #${{GITHUB_REF#refs/*/}}
         id: docker_build
         with:
           push: true
