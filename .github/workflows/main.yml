@@ -25,12 +25,11 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      -
-        name: Build and push
-        uses: docker/build-push-action@v2
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v1
         with:
-          context: .
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/paganuzzi/app:latest
-          #labels: ${{ steps.meta.outputs.labels }}
-          file: ./DockerfilePHP
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          repository: paganuzzi/stacklaravel
+          tags: latest
+          dockerfile: ./DockerfilePHP
