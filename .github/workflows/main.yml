@@ -17,14 +17,9 @@ jobs:
           cd app
           composer install
 
-      -
-        name: Docker meta
-        id: meta
-        uses: crazy-max/ghaction-docker-meta@v2
-        with:
-          images: ghcr.io/paganuzzi/stacklaravel-php
-          tags: |
-            type=ref,event=tag
+      - name: Get tag
+        id: tag
+        uses: dawidd6/action-get-tag@v1
       -
         name: Login to GitHub Container Registry
         uses: docker/login-action@v1 
@@ -39,7 +34,4 @@ jobs:
           context: .
           push: true
           file: DockerfilePHP
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          # tags: |
-          #   ghcr.io/paganuzzi/stacklaravel-php:latest
+          tags: ghcr.io/paganuzzi/stacklaravel-php:${{ steps.tags.outputs.tag }}
