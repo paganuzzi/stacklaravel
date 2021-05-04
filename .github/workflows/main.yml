@@ -22,9 +22,9 @@ jobs:
         id: meta
         uses: crazy-max/ghaction-docker-meta@v2
         with:
-          images: paganuzzi/stacklaravel/stacklaravel-php
+          images: ghcr.io/paganuzzi/stacklaravel-php
           tags: |
-            type=ref,event=branch
+            type=ref,event=tag
       -
         name: Login to GitHub Container Registry
         uses: docker/login-action@v1 
