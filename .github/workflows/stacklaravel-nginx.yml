@@ -1,4 +1,4 @@
-name: Composer
+name: stacklaravel-nginx
 on:
   push:
     tags:

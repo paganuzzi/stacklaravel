@@ -1,4 +1,4 @@
-name: Composer
+name: stacklaravel-php
 on:
   push:
     tags:
