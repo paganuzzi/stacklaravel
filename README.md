@@ -4,7 +4,7 @@
 
 - [x] Nginx y PHPFpm
 - [x] Nginx y PHPFpm non root
-- [ ] Multistage build, que se corra composer --nodev y node para generar la app
+- [x] Pipeline ci/cd corre composer --nodev y node para generar la app php y el webserver luego las pushea al registry de github
 - [ ] Redis
 - [ ] Minio object storage
 - [ ] Base de datos y migraciones
@@ -12,4 +12,3 @@
 - [ ] Task y jobs
 - [ ] Websockets para Notificaciones
 - [ ] Helm Chart
-- [ ] Pipeline ci/cd

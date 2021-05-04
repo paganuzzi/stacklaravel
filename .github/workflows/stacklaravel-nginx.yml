@@ -9,10 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: composer
-        run: |
-          cd app
-          composer install
+      - name: chekout
 
       - name: Get tag
         id: tag
