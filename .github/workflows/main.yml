@@ -34,4 +34,4 @@ jobs:
           context: .
           push: true
           file: DockerfilePHP
-          tags: ghcr.io/paganuzzi/stacklaravel-php:${{ steps.tags.outputs.tag }}
+          tags: ghcr.io/paganuzzi/stacklaravel-php:${{ steps.tag.outputs.tag }}
