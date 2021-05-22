@@ -12,7 +12,7 @@ jobs:
       - name: composer
         run: |
           cd app
-          composer install
+          composer install --optimize-autoloader --no-dev
 
       - name: Get tag
         id: tag
