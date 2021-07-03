@@ -4,7 +4,7 @@
 
 - [x] Nginx y PHPFpm
 - [x] Nginx y PHPFpm non root
-- [x] Pipeline ci/cd corre composer --nodev y node para generar la app php y el webserver luego las pushea al registry de github
+- [ ] Pipeline ci/cd corre composer --nodev y node para generar la app php y npm run prod para el webserver luego las pushea al registry de github
 - [ ] Redis
 - [ ] Minio object storage
 - [ ] Base de datos y migraciones
