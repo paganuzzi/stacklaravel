@@ -10,9 +10,9 @@ jobs:
     steps:
       - name: chekout
         uses: actions/checkout@v2
-        run: |
-          cd app
-          npm run prod
+        # run: |
+        #   cd app
+        #   npm run prod
       - name: Get tag
         id: tag
         uses: dawidd6/action-get-tag@v1
