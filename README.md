@@ -1,5 +1,5 @@
 # Proyecto para dockenizar Laravel
-### La idea principal es tener nginx, phpfpm, y recursos como redis, minio y postgres o mysql.
+### La idea principal es tener nginx, phpfpm, y recursos como redis, minio y postgres o mysql, etc.
 
 
 - [x] Nginx y PHPFpm
