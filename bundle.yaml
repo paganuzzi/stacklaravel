@@ -1,0 +1,111 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stacklaravelnginx
+  namespace: laravelapp
+  labels:
+    app: stacklaravelnginx
+spec:
+  selector:
+    matchLabels:
+      app: stacklaravelnginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: stacklaravelnginx
+    spec:
+      containers:
+        - name: stacklaravelnginx
+          image: ghcr.io/paganuzzi/stacklaravel-nginx:v1.4.4
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+            limits:
+              cpu: 100m
+              memory: 100Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stacklaravelnginx
+  namespace: laravelapp
+spec:
+  selector:
+    app: stacklaravelnginx
+  type: ClusterIP
+  ports:
+    - name: stacklaravelnginx
+      protocol: TCP
+      port: 8000
+      targetPort: 8000
+
+#PHP FPM
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stacklaravelphp
+  namespace: laravelapp
+  labels:
+    app: stacklaravelphp
+spec:
+  selector:
+    matchLabels:
+      app: stacklaravelphp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: stacklaravelphp
+    spec:
+      containers:
+        - name: stacklaravelphp
+          image: ghcr.io/paganuzzi/stacklaravel-php:v1.4.6
+          env:
+            - name: APP_KEY
+              value: base64:3yJ5EsrnbK2c7BgWcHKqSuJ1efRc4CGrFVb6s/uac7E=
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+            limits:
+              cpu: 100m
+              memory: 100Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpfpm
+  namespace: laravelapp
+spec:
+  selector:
+    app: stacklaravelphp
+  type: ClusterIP
+  ports:
+    - name: stacklaravelphp
+      protocol: TCP
+      port: 9000
+      targetPort: 9000
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: laravelapp
+  namespace: laravelapp
+spec:
+  rules:
+    - host: laravel.test
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: stacklaravelnginx
+                port:
+                  number: 8000
