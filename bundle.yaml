@@ -1,3 +1,7 @@
+
+---
+
+#NGINX
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -64,6 +68,18 @@ spec:
       containers:
         - name: stacklaravelphp
           image: ghcr.io/paganuzzi/stacklaravel-php:v1.4.6
+          command:
+            - php
+          args:
+            - artisan
+            - queue:work
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+            limits:
+              cpu: 100m
+              memory: 100Mi
           env:
             - name: APP_KEY
               value: base64:3yJ5EsrnbK2c7BgWcHKqSuJ1efRc4CGrFVb6s/uac7E=
