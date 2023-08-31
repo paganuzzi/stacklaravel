@@ -3,5 +3,6 @@ RUN apk add --no-progress --quiet --no-cache supervisor
 COPY supervisord.conf /etc/supervisord.conf
 WORKDIR /app
 COPY ./app .
+RUN composer install --optimize-autoloader --no-dev
 RUN chgrp -R www-data /app/storage && chown -R www-data /app/storage
 USER www-data:www-data

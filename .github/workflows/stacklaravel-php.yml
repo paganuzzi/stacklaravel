@@ -10,9 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: composer
-        run: |
-          cd app
-          composer install --optimize-autoloader --no-dev
 
       - name: Get tag
         id: tag
